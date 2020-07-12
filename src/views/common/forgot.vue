@@ -2,7 +2,7 @@
     <div class="forgot" style="height: 100%;">
         <div class="content">
             <a-spin :spinning="loading">
-                ddd
+                loading...
             </a-spin>
         </div>
     </div>

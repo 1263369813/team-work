@@ -234,7 +234,7 @@ export const getPushData = (data) => {
 //   }
 //   return arrs;
 // }
-export const snail = (arr) => {
+/*export const snail = (obj) => {
     for (var a in obj) {
         if (typeof (obj[a]) == "object") {
             return snail(obj[a], value); //递归遍历
@@ -247,7 +247,7 @@ export const snail = (arr) => {
             }
         }
     }
-};
+};*/
 
 // 判断参数是否是其中之一
 export function oneOf(value, validList) {

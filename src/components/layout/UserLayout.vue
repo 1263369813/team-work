@@ -4,9 +4,9 @@
             <div class="top">
                 <div class="header">
                     <a-badge>
-                        <a href="/">
+                        <a href="#">
                             <img src="../../assets/image/common/logo.png" class="logo" alt="logo">
-                            <span class="title">数据信息协作管理系统</span>
+                            <span class="title">任务协同项目管理系统</span>
                         </a>
                     </a-badge>
                 </div>
@@ -23,7 +23,7 @@
                       <a href="_self">条款</a>
                   </div>-->
                 <div class="copyright">
-                    Copyright &copy; 2019 数据信息协作管理系统
+                    Copyright &copy; 2020 任务协同项目管理系统
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             desc: {
                 type: [String],
                 default() {
-                    return '欢迎使用数据信息协作管理系统';
+                    return '欢迎使用任务协同项目管理系统';
                 }
             }
         }

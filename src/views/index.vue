@@ -6,9 +6,13 @@
                 <a-layout-header :class="{'collapsed':collapsed}">
                     <div class="logo" @click="toHome">
                         <img class="logo-img" src="../assets/image/common/logo.png" alt="">
-                        <span class="title" v-if="system">
+<!--                        <span class="title" v-if="system">
                             {{system.app_name}}
                              <span class="version">{{system.app_version}}</span>
+                        </span>-->
+                        <span class="title">
+                            TeamWork
+                             <span class="version">1.0</span>
                         </span>
                     </div>
                     <a-menu
@@ -52,11 +56,11 @@
                             collapsible
                             v-model="collapsed"
                     >
-                        <!-- <a-icon
+                         <a-icon
                          class="trigger"
                          :type="collapsed ? 'menu-unfold' : 'menu-fold'"
                          @click="()=> collapsed = !collapsed"
-                         />-->
+                         />
                         <a-menu :theme="theme"
                                 v-for="menu in menus"
                                 :key="menu.id.toString()"
@@ -103,12 +107,12 @@
                                 </a-spin>
                             </transition>
                         </a-layout-content>
-                        <!-- <a-footer style="text-align: center">
+                         <a-footer style="text-align: center">
                              <template v-if="system">
-                                 <span @click="footerClick">  Copyright © 2018 技术部出品 </span>
+                                 <span @click="footerClick">  Copyright © 2020 MokingSoft </span>
                              </template>
-                         </a-footer>-->
-                        <!--</vue-scroll>-->
+                         </a-footer>
+                        </vue-scroll>
                     </a-layout>
                 </a-layout>
             </a-layout>
@@ -161,6 +165,9 @@
             }
         },
         computed: {
+            //这个是扩展运算符。
+            //扩展语法。对数组和对象而言，就是将运算符后面的变量里东西每一项拆下来。
+            //这个东西可以在函数定义的地方使用，比如使用func(...args)将函数传入的参数都放到args数组里。
             ...mapState({
                 theme: state => state.theme,
                 logged: state => state.logged,
