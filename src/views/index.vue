@@ -33,8 +33,7 @@
                     </a-menu>
                     <div class="right-menu">
                         <div class="m-r-lg" v-if="config.WS_URI">
-                            <a-badge title="当前在线" :count="online" showZero :numberStyle="{backgroundColor: '#52c41a'} "
-                                     :offset="[10,0]">
+                            <a-badge title="当前在线" :count="online" showZero :numberStyle="{backgroundColor: '#52c41a'} " :offset="[10,0]">
                                 <a-icon type="team"/>
                             </a-badge>
                         </div>
