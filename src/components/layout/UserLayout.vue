@@ -23,7 +23,7 @@
                       <a href="_self">条款</a>
                   </div>-->
                 <div class="copyright">
-                    Copyright &copy; 2020 任务协同项目管理系统
+                    Copyright &copy; 2020  任务协同项目管理系统
                 </div>
             </div>
         </div>

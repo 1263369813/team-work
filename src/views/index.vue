@@ -6,7 +6,7 @@
                 <a-layout-header :class="{'collapsed':collapsed}">
                     <div class="logo" @click="toHome">
                         <img class="logo-img" src="../assets/image/common/logo.png" alt="">
-<!--                        <span class="title" v-if="system">
+<!--                        <span class="title" v-if="system" >
                             {{system.app_name}}
                              <span class="version">{{system.app_version}}</span>
                         </span>-->

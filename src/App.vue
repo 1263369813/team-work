@@ -1,6 +1,6 @@
 <template>
     <div id="app" style="height: 100%">
-        <a-config-provider :locale="zh_CN">
+        <a-config-provider :locale="zh_CN" >
             <transition name="router-fades" mode="out-in">
                 <router-view></router-view>
             </transition>
