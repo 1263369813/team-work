@@ -8,7 +8,9 @@ c.  命令行输入  cnpm install(推荐)  或  npm install
 
 3. 配置后端地址
 a.vue.config.js    const DEV_URL = 'http://127.0.0.1:8888/'; 配置后端地址
+
 b.run serve 运行服务
+
 c.http://localhost:8045/ 访问应用 
 
 
