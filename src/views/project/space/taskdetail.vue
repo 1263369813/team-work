@@ -50,11 +50,11 @@
 
 <style lang="less">
     .task-detail-modal {
-        /*display: flex;*/
-        /*justify-content: center;*/
-        /*flex: 1;*/
-        /*min-height: 1px;*/
-        /*min-width: 1px;*/
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        min-height: 1px;
+        min-width: 1px;
         width: 1200px;
 
         &.ant-modal {
@@ -62,9 +62,8 @@
         }
 
         .ant-modal-content {
-            /*width: 1200px;*/
-            /*overflow: hidden;*/
-
+            width: 1200px;
+            overflow: hidden;
             .ant-modal-body {
                 padding: 0;
             }

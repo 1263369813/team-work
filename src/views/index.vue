@@ -98,19 +98,19 @@
                     <a-layout
                             class="main-content"
                             :style="collapsed ? { paddingLeft: '80px'} : { paddingLeft: '256px'}">
-                        <!--<vue-scroll ref="contentscroll">-->
-                        <a-layout-content>
-                            <transition name="router-fade" mode="out-in">
-                                <a-spin :spinning="pageLoading">
-                                    <router-view></router-view>
-                                </a-spin>
-                            </transition>
-                        </a-layout-content>
-                         <a-footer style="text-align: center">
-                             <template v-if="system">
-                                 <span @click="footerClick">  Copyright © 2020 MokingSoft </span>
-                             </template>
-                         </a-footer>
+                        <vue-scroll ref="contentscroll">
+                            <a-layout-content>
+                                <transition name="router-fade" mode="out-in">
+                                    <a-spin :spinning="pageLoading">
+                                        <router-view></router-view>
+                                    </a-spin>
+                                </transition>
+                            </a-layout-content>
+                             <a-footer style="text-align: center">
+                                 <template v-if="system">
+                                     <span @click="footerClick">  Copyright © 2020 MokingSoft </span>
+                                 </template>
+                             </a-footer>
                         </vue-scroll>
                     </a-layout>
                 </a-layout>
@@ -177,7 +177,7 @@
                 organizationList: state => state.organizationList,
                 socketAction: state => state.socketAction,
             }),
-            layoutClass() {
+            layoutClass() {//切换样式
                 let className = 'layout-' + this.theme;
                 if (!this.$route.meta.info.show_slider) {
                     className += ' hide';
@@ -223,7 +223,7 @@
         },
         methods: {
             footerClick() {
-                autoPlay('order');
+                //autoPlay('order');
                 const socket = this.$refs.socket;
                 this.$websocket.send(JSON.stringify({uid: this.$store.state.userInfo.id}));
             },
@@ -327,7 +327,7 @@
             menuModelClick(event) {
                 //点击顶部导航跳转页面
                 let that = this;
-                that.menu.forEach(function (v, k) {
+                that.menu.forEach(function (v) {
                     if (v.id == event.key) {
                         that.menus = v.children;
                         let turnPath = '/';
@@ -349,12 +349,13 @@
                 });
             },
             onModelOpenChange(openKeys) {
+                console.log(openKeys);
             },
             onOpenChange(openKeys) {
                 let that = this;
                 const latestOpenKey = openKeys.find(key => this.openKeys.indexOf(key) === -1);
                 let hasOpenKey = false;
-                this.menus.forEach(function (v, k) {
+                this.menus.forEach(function (v) {
                     if (v.id == latestOpenKey) {
                         that.openKeys = latestOpenKey ? [latestOpenKey] : [];
                         hasOpenKey = true;
