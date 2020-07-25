@@ -87,7 +87,7 @@
         methods: {
             init() {
                 let app = this;
-                app.requestData.type = 'notice';
+                app.requestData.type = 'message';
                 app.loading = true;
                 app.selectedRowKeys = [];
                 list(app.requestData).then(res => {

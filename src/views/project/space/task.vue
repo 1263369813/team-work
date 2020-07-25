@@ -717,7 +717,7 @@
                 }
                 if (from.name == 'taskdetail') {
                     const stageIndex = from.query.from;
-                    // this.getTaskStages(false);
+                    this.getTaskStages(false);
                     if (stageIndex != undefined) {
                         let searchParams = this.taskSearchParams;
                         let params = Object.assign({stageCode:this.taskStages[stageIndex].code}, searchParams);

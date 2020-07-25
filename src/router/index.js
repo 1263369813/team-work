@@ -15,6 +15,11 @@ if (currentOrganization) {
 }
 
 Vue.use(Router);
+const originalPush = Router.prototype.push
+Router.prototype.push = function push (location) {
+    return originalPush.call(this, location).catch(err => err)
+}
+
 const routes = [].concat(
     Home
 );
@@ -124,9 +129,10 @@ router.beforeEach((to, from, next) => {
         //判断accessToken即将到期后刷新token
         if (accessTokenExp && isTokenExpired(accessTokenExp)) {
             refreshAccessToken(refreshToken).then(res => {
-                tokenList.accessToken = res.data.accessToken;
-                tokenList.accessTokenExp = res.data.accessTokenExp;
-                setStore('tokenList', tokenList);
+                // tokenList.accessToken = res.data.accessToken;
+                // tokenList.accessTokenExp = res.data.accessTokenExp;
+                // setStore('tokenList', tokenList);
+                setStore('tokenList', res.data);
             });
         }
     }

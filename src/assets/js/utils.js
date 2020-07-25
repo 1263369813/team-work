@@ -306,8 +306,8 @@ export const isTokenExpired = (timeStamp) => {
     let expiredTime = timeStamp;
     /*获取本地时间*/
     let nowTime = new Date().getTime() / 1000;
-    /*如果 < 10分钟，则说明即将过期*/
-    return (expiredTime - nowTime) < 60 * 10
+    /*如果 < 30分钟，则说明即将过期*/
+    return (expiredTime - nowTime) < 60 * 30
 };
 
 //实现一个能遍历多维数组的方法 那么就在原型里面添加方法

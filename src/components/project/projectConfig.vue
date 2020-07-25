@@ -422,9 +422,9 @@
                 },
                 taskWorkflowRuleActions: [
                     {id: -1, name: "请选择"},
-                    {id: 0, name: "增加任务、被移动"},
+                    {id: 0, name: "增加任务"},
                     {id: 1, name: "被完成"},
-                    {id: 2, name: "被重做"},
+                    //{id: 2, name: "被重做"},
                     {id: 3, name: "设置执行人"},
                     // {id: 4, name: "截止时间"},
                     // {id: 5, name: "优先级"},

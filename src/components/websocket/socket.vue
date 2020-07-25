@@ -46,8 +46,16 @@
                 this.websocket = new WebSocket(WS_URI);
                 this.websocket.onmessage = this.websocketOnMessage;
                 this.websocket.onclose = this.websocketClose;
+                this.websocket.onopen = this.websocketOnOpen
+                this.websocket.onerror = this.websocketOnError
                 Vue.prototype.$websocket = this.websocket;
 
+            },
+            websocketOnOpen () {
+                console.log('WebSocket连接成功')
+            },
+            websocketOnError (e) {
+                console.log('WebSocket连接发生错误')
             },
             websocketOnMessage(e) { //数据接收
                 const data = JSON.parse(e.data);
