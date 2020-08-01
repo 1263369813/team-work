@@ -38,9 +38,9 @@
                 this.editor.create();
             },
             initConfig() {
-                this.editor.customConfig.uploadFileName = this.uploadFileName ? this.uploadFileName : 'image[]';
-                this.editor.customConfig.uploadImgServer = this.uploadImgServer;
-                this.editor.customConfig.uploadImgShowBase64 = this.uploadImgShowBase64 ? this.uploadImgShowBase64 : false;
+                // this.editor.customConfig.uploadFileName = this.uploadFileName ? this.uploadFileName : 'image[]';
+                // this.editor.customConfig.uploadImgServer = this.uploadImgServer;
+                // this.editor.customConfig.uploadImgShowBase64 = this.uploadImgShowBase64 ? this.uploadImgShowBase64 : false;
                 // this.editor.customConfig.uploadImgFns.onload = (resultText, xhr) => {
                 //     let originalName = this.editor.uploadImgOriginalName || '';
                 //     this.$emit('load', originalName, resultText)
@@ -51,7 +51,7 @@
                 // this.editor.customConfig.uploadImgFns.onerror = (xhr) => {
                 //     this.$emit('error')
                 // };
-                this.editor.customConfig.uploadImgFileName = 'file';
+                // this.editor.customConfig.uploadImgFileName = 'file';
                 this.editor.customConfig.pasteFilter = false;
                 if (this.mapKey != undefined) {
                     // 配置地图key，默认空
@@ -80,15 +80,15 @@
                 }
                 if (this.hideLinkImg != undefined) {
                     // 隐藏添加网络图片功能，默认显示
-                    this.editor.customConfig.hideLinkImg = this.hideLinkImg
+                    // this.editor.customConfig.hideLinkImg = this.hideLinkImg
                 }
                 if (this.uploadImgParams != undefined && this.uploadImgParams instanceof Object) {
                     // 上传图片自定义参数
-                    this.editor.customConfig.uploadImgParams = this.uploadImgParams
+                    // this.editor.customConfig.uploadImgParams = this.uploadImgParams
                 }
                 if (this.uploadImgHeaders != undefined && this.uploadImgHeaders instanceof Object) {
                     // 上传图片自定义头部
-                    this.editor.customConfig.uploadImgHeaders = this.uploadImgHeaders
+                    // this.editor.customConfig.uploadImgHeaders = this.uploadImgHeaders
                 }
                 if (this.value) {
                     this.setHtml(this.value)

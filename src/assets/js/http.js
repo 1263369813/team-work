@@ -50,6 +50,9 @@ $http.interceptors.response.use(
     response => {
         response = response.data;
         response.code = Number(response.code);
+        // if("无权限操作资源"==response.msg){
+        //     debugger;
+        // }
         switch (response.code) {
             case 200:
                 response.msg !== '' && notice(response.msg, 'message', 'success');

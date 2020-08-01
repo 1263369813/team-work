@@ -4,7 +4,7 @@
                     v-model="visibleMenu"
                     class="action-item" placement="bottomCenter">
             <a-tooltip :mouseEnterDelay="0.3" :title="currentProject.name">
-                <a class="project-select" style="color: #333" @click="visibleMenu = true">
+                <a class="project-select" style="color: #333" @click="opens">
                     <span>{{currentProject.name}}</span>
                     <span class="m-l-xs"><a-icon type="down"/></span>
                 </a>
@@ -70,6 +70,7 @@
                 projectList: [],
                 projectListCopy: [],
                 projectTotal: 0,
+                open:false
             }
         },
         mixins: [pagination],
@@ -85,7 +86,8 @@
             },
             keyword() {
                 this.search();
-            }
+            },
+
         },
         created() {
             this.init();
@@ -94,6 +96,16 @@
             init() {
                 this.getProject();
                 this.getProjectList(true);
+            },
+            opens(){
+
+                if(this.visibleMenu){
+                    this.open = false
+                    this.visibleMenu = true
+                }else{
+                    this.open = false
+                    this.visibleMenu = false
+                }
             },
             getProject() {
                 getProject(this.code).then((res) => {
@@ -127,7 +139,7 @@
                         this.projectList = JSON.parse(JSON.stringify(this.projectListCopy));
                     }
                     if (this.keyword.length <= 1) {
-                        return false;
+                        //return false;
                     }
                     // this.searching = true;
                     this.projectList = this.projectList.filter(item => item.name.indexOf(this.keyword) != -1);

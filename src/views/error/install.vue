@@ -1,6 +1,6 @@
 <template>
     <div class="install" style="height: 100%;">
-        <user-layout desc="正在安装数据信息协作管理系统">
+        <user-layout desc="正在安装任务协同管理系统">
             <div class="main">
                 <a-form
                         layout="horizontal"

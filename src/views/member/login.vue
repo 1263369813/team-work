@@ -133,7 +133,6 @@
     import {checkResponse, createRoute, timeFix} from '@/assets/js/utils'
     import {getStore} from '@/assets/js/storage'
     import {checkInstall} from "../../api/common/common";
-    import {setStore} from "../../assets/js/storage";
     import {_checkLogin} from "../../api/user";
     import {dingTalkLoginByCode, dingTalkOauth} from "../../api/oauth";
     import {notice} from "../../assets/js/notice";
@@ -170,6 +169,13 @@
         },
         mounted() {
             //this.checkInstall();
+            //debugger;
+            info().then(res => {
+                if (checkResponse(res)) {
+                    this.$store.dispatch('setSystem', res.data);
+                }
+            });
+            debugger;
             if (this.$route.query.logged) {
                 this.oauthLoading = true;
                 this.checkLogin();

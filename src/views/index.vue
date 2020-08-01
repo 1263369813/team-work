@@ -367,6 +367,11 @@
                 }
             },
         },
+        destroyed() {
+            console.log('destroyed');
+            //this.socketAction ="onClose";
+            //this.$refs.socket.websocketClose();
+        }
     }
 </script>
 <style lang="less">

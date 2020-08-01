@@ -351,11 +351,11 @@
                                                     <a v-show="showMoreDesc"
                                                        @click="checkShowMoreDesc(false)">收起备注</a>
                                                 </div>
+                                                <!--:uploadImgServer="editorConfig.uploadImgServer"-->
+                                                <!--:uploadImgHeaders="editorConfig.uploadImgHeaders"-->
                                                 <div v-show="showTaskDescriptionEdit">
                                                     <editor ref="vueWangeditor"
                                                             id="editor"
-                                                            :uploadImgServer="editorConfig.uploadImgServer"
-                                                            :uploadImgHeaders="editorConfig.uploadImgHeaders"
                                                             :menus="editorConfig.menus"
                                                     ></editor>
                                                     <div class="action-btn pull-right">
@@ -1286,8 +1286,6 @@
             uploader: {
                 handler(newVal, oldVal) {
                     //监听是否有上传文件行为
-                    console.log(newVal);
-                    console.log(newVal.fileList);
                     const files = newVal.fileList;
                     const index = files.findIndex(item => item.projectName == this.task.projectName);
                     if (index !== -1) {
@@ -1309,7 +1307,6 @@
                 })()
             };
             document.onkeydown = (event) => {
-                console.log(event);
                 var e = event || window.event || arguments.callee.caller.arguments[0];
                 if (13 == e.keyCode && e.ctrlKey) {
                     //处理的部分
@@ -1531,9 +1528,9 @@
                     okType: 'danger',
                     cancelText: `再想想`,
                     onOk() {
-                        del(app.code).then((res) => {
-                            ``
+                        del(app.code).then((res) => {                            ``
                             app.detailClose();
+                            console.log(res);
                         });
                         return Promise.resolve();
                     }

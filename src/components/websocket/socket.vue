@@ -82,8 +82,9 @@
                 console.log(agentData);
                 this.websocket.send(agentData);
             },
-            websocketClose(e) {  //关闭
-                console.log("connection closed (" + e.code + ")");
+            websocketClose() {  //关闭
+                debugger;
+                console.log("connection closed ");
             }
         },
         created() {
