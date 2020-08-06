@@ -6,11 +6,11 @@
                     <a-badge>
                         <a href="#">
                             <img src="../../assets/image/common/logo.png" class="logo" alt="logo">
-                            <span class="title">{{system.app_title}}</span>
+                            <span class="title">任务协同项目管理系统</span>
                         </a>
                     </a-badge>
                 </div>
-                <div class="desc">{{system.app_desc}}</div>
+                <div class="desc">欢迎使用任务协同项目管理系统</div>
             </div>
 
             <router-view/>
@@ -23,7 +23,7 @@
                       <a href="_self">条款</a>
                   </div>-->
                 <div class="copyright">
-                    {{system.site_copy}}
+                    Copyright © 2020 任务协同项目管理系统
                 </div>
             </div>
         </div>

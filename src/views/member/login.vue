@@ -175,7 +175,7 @@
                     this.$store.dispatch('setSystem', res.data);
                 }
             });
-            debugger;
+            //debugger;
             if (this.$route.query.logged) {
                 this.oauthLoading = true;
                 this.checkLogin();
