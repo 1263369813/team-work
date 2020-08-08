@@ -121,7 +121,7 @@
         </a-form>
     </div>
 </template>
-
+<!--<script> https://cdn.bootcss.com/es6-promise/4.1.1/es6-promise.auto.min.js</script>-->
 <script>
     import md5 from 'md5'
     import * as dd from 'dingtalk-jsapi';

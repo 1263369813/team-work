@@ -19,8 +19,8 @@ import 'moment/locale/zh-cn';
 
 import common from "./mixins/common";
 
-import '@/utils/filter' // global filter
-
+import '@/utils/filter' ;// global filter
+import 'babel-polyfill';
 
 moment.locale('zh-cn');
 

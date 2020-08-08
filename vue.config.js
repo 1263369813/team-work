@@ -48,5 +48,11 @@ module.exports = {
             }
         }
     },
-    lintOnSave: undefined
+    lintOnSave: undefined,
+    chainWebpack: config => {
+        // config.module.rules.delete('svg')
+        config.module.rule('iview') .test(/\.js$/) .use('babel').loader('babel-loader') .end() // 此处是添加内容重点
+        config.resolve.alias.set("@", resolve("src"))
+    }
+
 };
