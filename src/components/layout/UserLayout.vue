@@ -6,11 +6,11 @@
                     <a-badge>
                         <a href="#">
                             <img src="../../assets/image/common/logo.png" class="logo" alt="logo">
-                            <span class="title">任务协同项目管理系统</span>
+                            <span class="title"  v-if="system && system.app_title ">{{system.app_title}}</span>
                         </a>
                     </a-badge>
                 </div>
-                <div class="desc">欢迎使用任务协同项目管理系统</div>
+                <div class="desc" v-if="system && system.app_desc ">{{system.app_desc}}</div>
             </div>
 
             <router-view/>
@@ -22,8 +22,8 @@
                       <a href="_self">隐私</a>
                       <a href="_self">条款</a>
                   </div>-->
-                <div class="copyright">
-                    Copyright © 2020 任务协同项目管理系统
+                <div class="copyright" v-if="system && system.site_copy ">
+                    {{system.site_copy}}
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+    import {mapState} from 'vuex';
     export default {
         name: 'UserLayout',
         props: {
