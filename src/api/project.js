@@ -45,3 +45,9 @@ export function _projectStats(data) {
 export function _getProjectReport(data) {
     return $http.post('project/project/_getProjectReport', data);
 }
+export function getTopList(param) {
+    return $http.post('project/project/getTopList', param);
+    }
+export function getTask() {
+    return $http.post('project/project/taskPriority');
+}
