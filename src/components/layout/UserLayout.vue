@@ -32,6 +32,9 @@
 
 <script>
     import {mapState} from 'vuex';
+    import {info} from '@/api/system'
+    import {checkResponse} from '@/assets/js/utils'
+
     export default {
         name: 'UserLayout',
         props: {
@@ -46,8 +49,20 @@
             ...mapState({
                 system: state => state.system,
             })
-        }
-    }
+        },
+    //     data() {
+    //         return {
+    //             system: ''
+    //         }
+    //     },
+    //     mounted() {
+    //         info().then(res => {
+    //             if (checkResponse(res)) {
+    //                 this.$store.dispatch('setSystem', res.data);
+    //                 this.system = res.data
+    //             }
+    //         });
+     }
 </script>
 
 <style lang="less">

@@ -73,11 +73,12 @@
                             name="cover"
                             class="cover-uploader"
                             :showUploadList="false"
+                            :data="{code:newData.code}"
                             :headers="headers"
                             :action="uploadAction"
                             :beforeUpload="beforeUpload"
                             @change="handleChange"
-                    >
+                            >
                         <a-button icon="upload" class="upload">上传封面</a-button>
                         <span class="upload-tips muted">最佳图片比例为300*150</span>
                     </a-upload>
@@ -114,10 +115,9 @@
 </template>
 <script>
     import {list, doData, del} from '@/api/projectTemplate';
-    import {checkResponse, getApiUrl, getBase64} from '@/assets/js/utils';
     import pagination from "@/mixins/pagination";
-    import config from "@/config/config"
-    import {getAuthorization} from "../../../assets/js/utils";
+    import config from "@/config/config";
+    import {checkResponse, getApiUrl,  getAuthorization,getBase64} from "../../../assets/js/utils";
 
     export default {
         components: {},
@@ -126,12 +126,12 @@
             return {
                 viewType: '0',
                 dataSource: [],
-                loading: true,
+                loading: false,
                 showLoadingMore: false,
                 loadingMore: false,
                 currentTemplate: {},
                 cover:'https://beta.vilson.xyz/static/image/default/project-cover.png',
-                // cover: config.PROD_URL + '/static/image/default/cover.png',
+                //cover: config.PROD_URL + '/static/image/default/cover.png',
                 newData: {
                     id: 0,
                 },
@@ -143,11 +143,12 @@
                     modalTitle: '编辑模板',
                 },
                 uploadLoading: false,
-                uploadAction: getApiUrl('project/project_template/uploadCover'),
+                uploadAction: getApiUrl('project/project/uploadCover'),
             }
         },
         computed: {
             headers() {
+                //alert(getAuthorization());
                 return getAuthorization();
             }
         },
@@ -189,6 +190,7 @@
                 this.currentTemplate = record;
                 let app = this;
                 app.newData = {code: ''};
+                //debugger;
                 if (action == 'edit' || action == 'new') {
                     setTimeout(function () {
                         app.form && app.form.resetFields();
@@ -265,11 +267,13 @@
             },
             handleChange(info) {
                 if (info.file.status === 'uploading') {
+                    //notice(`正在上传，请稍后...`, 'message', 'loading', 0);
                     this.uploadLoading = true;
                     return
                 }
                 if (info.file.status === 'done') {
                     getBase64(info.file.originFileObj, (imageUrl) => {
+                        //debugger;
                         this.cover = info.file.response.data.url;
                         this.uploadLoading = false;
                     })

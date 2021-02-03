@@ -309,6 +309,14 @@
                 } else {
                     //新增
                     Object.assign(obj, app.newData);
+                    //设置项目封面20200202
+                    var j,len;
+                    for(j = 0,len=this.templateList.length; j < len; j++) {
+                        if(obj && obj.templateCode == this.templateList[j].code ){
+                            obj.cover = this.templateList[j].cover;
+                            break;
+                        }
+                    }
                 }
 
                 doData(obj).then(res => {

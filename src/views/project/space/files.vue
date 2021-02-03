@@ -97,7 +97,7 @@
                                 </a-list-item-meta>
                                 <div class="other-info muted">
                                     <div class="info-item">
-                                        <span>{{(formatSize(item.size))}}</span>
+                                        <span>{{(formatSize(item.fsize))}}</span>
                                     </div>
                                     <div class="info-item">
                                         <a-tooltip :title="item.create_time">

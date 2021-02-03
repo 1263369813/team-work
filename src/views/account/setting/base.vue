@@ -103,7 +103,7 @@
         mounted() {
             this.$nextTick(() => {
                 this.form.setFieldsValue({
-                    email: this.userInfo.email,
+                    //email: this.userInfo.email,
                     name: this.userInfo.name,
                     description: this.userInfo.description,
                 });
