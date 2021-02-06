@@ -18,6 +18,8 @@ a.vue.config.js    const DEV_URL = 'http://127.0.0.1:8888/'; 配置后端地址
 
 b.run serve 运行服务
 
-c.http://localhost:8045/ 访问应用 
+c.http://localhost:8045/ 访问应用
+
+说明：有疑问可到服务端统一提问。
 
 
